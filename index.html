@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/asset/fédération.svg" type="image/x-icon" />
+        <title>Tournoi</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Abel&family=Outfit:wght@200&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <style>
+        @font-face {
+            font-family: "georgia";
+            src: url("asset/georgia/Georgia_Regular_font.ttf");
+        }
+
+        @font-face {
+            font-family: "georgia_bold";
+            src: url("asset/georgia/georgia_bold.ttf");
+        }
+
+        body {
+            font-family: "georgia", sans-serif;
+        }
+
+        h1 {
+            font-family: "georgia_bold", sans-serif;
+        }
+
+        form {
+            font-family: "Abel", sans-serif;
+            font-family: "Outfit", sans-serif;
+        }
+
+        .border-grey {
+            border-color: #797979;
+        }
+
+        .color-red {
+            color: #d8232a;
+            font-family: "Abel", sans-serif;
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
+
+    <body class="bg-white h-screen w-full">
+        <div
+            class="flex items-center justify-center flex-col w-full h-full text-black"
+        >
+            <img src="asset/fédération.svg" alt="" />
+            <h1 class="text-6xl mt-10">GÉNÉRATEUR DE TOURNOI</h1>
+
+            <form
+                action=""
+                id="password-form"
+                class="flex flex-col items-center justify-center mt-10"
+            >
+                <p class="text-xl font-semibold">Veuillez entrer le code</p>
+                <input
+                    type="password"
+                    name="login"
+                    id="login"
+                    class="border border-grey my-6 text-2xl"
+                />
+                <button
+                    type="submit"
+                    value="submit"
+                    style="background-color: #d8232a"
+                    class="z-10 px-4 py-2 font-semibold rounded-sm hover:opacity-70 text-white"
+                >
+                    Valider
+                </button>
+            </form>
+
+            <div class="template_generator hidden" id="template_generator">
+                <a
+                    href="template.xlsx"
+                    download="template"
+                    class="color-red my-10 font-bold flex flex-row w-full items-center justify-center hover:opacity-70"
+                >
+                    <img src="asset/download.svg" alt="" class="mr-2" />
+                    Télécharger le template
+                </a>
+
+                <form
+                    action="https://uiziqlqckarxehmut5mpalxqvu0nahwo.lambda-url.eu-west-1.on.aws/"
+                    method="post"
+                    accept-charset="utf-8"
+                    enctype="multipart/form-data"
+                    class="z-10 flex justify-center items-center flex-col"
+                >
+                    <div
+                        class="border-grey flex items-center justify-center flex-col px-32 py-10 border border-dashed"
+                    >
+                        <label for="xlsx" class="text-2xl font-semibold"
+                            >Déposez Votre Fichier Excel:</label
+                        >
+                        <p class="m-3">ou</p>
+                        <button
+                            type="button"
+                            onclick="document.getElementById('xlsx').click(); event.preventDefault();"
+                            class="px-3 py-2 bg-black text-white w-fit font-semibold hover:opacity-70"
+                        >
+                            Importer depuis vos fichiers
+                        </button>
+                        <input
+                            type="file"
+                            id="xlsx"
+                            name="xlsx"
+                            style="display: none"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        value="submit"
+                        style="background-color: #d8232a"
+                        class="z-10 mt-8 px-4 py-3 font-semibold rounded-sm hover:opacity-70 text-white"
+                    >
+                        Générer le tournoi
+                    </button>
+                </form>
+            </div>
+
+            <img
+                src="asset/bg_white.png"
+                alt=""
+                class="absolute bottom-0 z-0"
+            />
+        </div>
+    </body>
+
+    <script>
+        const fileInput = document.getElementById("xlsx");
+        const uploadButton = document.querySelector('button[type="button"]');
+        uploadButton.addEventListener("click", () => {
+            fileInput.click();
+        });
+        fileInput.addEventListener("change", (event) => {
+            const fileName = event.target.files[0].name;
+            uploadButton.textContent = fileName;
+        });
+    </script>
+
+    <script>
+        const form = document.getElementById("password-form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            const password = document.getElementById("login").value;
+
+            // Check if the password is correct
+            if (password === "123456") {
+                form.style.display = "none"; // Hide the form
+                document
+                    .getElementById("template_generator")
+                    .classList.remove("hidden"); // Show the template generator
+            } else {
+                alert("Mot de passe incorrect"); // Show an error message
+            }
+        });
+    </script>
+</html>
