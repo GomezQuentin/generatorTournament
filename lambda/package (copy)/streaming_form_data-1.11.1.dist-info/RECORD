@@ -1,0 +1,16 @@
+streaming_form_data-1.11.1.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+streaming_form_data-1.11.1.dist-info/LICENSE.txt,sha256=XkPbI6zVBy2SNv3X2ilBnze7j-T0Fw3j5pWUH9Xxtg0,1077
+streaming_form_data-1.11.1.dist-info/METADATA,sha256=myw0_hPVJXTlo97dSIXrQpPRY3MO5tgiGtDa8MpTJmo,4136
+streaming_form_data-1.11.1.dist-info/RECORD,,
+streaming_form_data-1.11.1.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+streaming_form_data-1.11.1.dist-info/WHEEL,sha256=24QVFBJBvF4a1ZC352AVuqHCJgY3xUfAV-_i6gkjtuc,225
+streaming_form_data-1.11.1.dist-info/top_level.txt,sha256=lTgAZgYvLH3LLe_DILwXtizVMs-Tb9GgpCgUBbRFRfo,20
+streaming_form_data/__init__.py,sha256=Vdf5aPNYo49JI8WSVlGkQE6_PgrkVGJ6-RQWIW8eZYY,106
+streaming_form_data/__pycache__/__init__.cpython-310.pyc,,
+streaming_form_data/__pycache__/parser.cpython-310.pyc,,
+streaming_form_data/__pycache__/targets.cpython-310.pyc,,
+streaming_form_data/__pycache__/validators.cpython-310.pyc,,
+streaming_form_data/_parser.cpython-310-x86_64-linux-gnu.so,sha256=hKTxbP0cNQzDIy41vcZO9D2Bb6Uuz50VithHKEmEKQw,1353656
+streaming_form_data/parser.py,sha256=vKQ2kK_NibPhv824qFisdkNEVCndcxuwgfaeKDaP7S0,2212
+streaming_form_data/targets.py,sha256=m9dRfFyzMrCv1uy_dMJLa2Cce4EiDJk7ydbXFZajIjs,4515
+streaming_form_data/validators.py,sha256=jfXWpKkdsA8yprSjexhUOm-5uSCV1JUg9pF8HQIYY8U,401
